@@ -8,6 +8,12 @@ using MassTransit;
 
 namespace Web.Controllers
 {
+    public class CreateCustomerViewModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -17,9 +23,14 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult Create(string name)
+        public ActionResult Create(CreateCustomerViewModel model)
         {
-            Bus.Instance.Publish(new ParseCvMessage { S3Key = name });
+            Bus.Instance.Publish(new CreateCustomerMessage 
+            { 
+                FirstName = model.FirstName, 
+                LastName =  model.LastName,
+                Id = Guid.NewGuid() 
+            });
             return RedirectToAction("Index");
         }
 

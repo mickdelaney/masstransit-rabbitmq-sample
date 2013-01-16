@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MassTransit.RabbitMQ</id>
+    <version>2.7.0</version>
+    <authors>Chris Patterson,  Dru Sellers,  Travis Smith</authors>
+    <owners>Chris Patterson,  Dru Sellers,  Travis Smith</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://masstransit-project.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This integration library adds support for RabbitMQ to MassTransit, a distributed application framework for .NET, including support for MSMQ and RabbitMQ.</description>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="MassTransit" version="2.7.0" />
+      <dependency id="RabbitMQ.Client" version="2.8.7" />
+    </dependencies>
+    <references>
+      <reference file="MassTransit.Transports.RabbitMq.dll" />
+    </references>
+  </metadata>
+</package>

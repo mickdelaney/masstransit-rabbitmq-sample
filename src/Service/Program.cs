@@ -17,20 +17,20 @@ namespace Service
             {
                 sbc.UseRabbitMq();
                 sbc.UseRabbitMqRouting();
-                sbc.ReceiveFrom("rabbitmq://localhost/elevate");
+                sbc.ReceiveFrom("rabbitmq://localhost/sample.customerservices");
             });
 
             var cfg = HostFactory.New(c => {
 
-                c.SetServiceName("ElevateServices");
-                c.SetDisplayName("ElevateServices");
-                c.SetDescription("ElevateServices");
+                c.SetServiceName("Sample.CustomerServices");
+                c.SetDisplayName("Sample.CustomerServices");
+                c.SetDescription("Sample.CustomerServices");
 
                 //c.BeforeStartingServices(s => {});
 
-                c.Service<CvParserService>(a =>
+                c.Service<CustomerService>(a =>
                 {
-                    a.ConstructUsing(service => new CvParserService());
+                    a.ConstructUsing(service => new CustomerService());
                     a.WhenStarted(o => o.Start());
                     a.WhenStopped(o => o.Stop());
                 });
