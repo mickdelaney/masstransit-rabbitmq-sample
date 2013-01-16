@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using MassTransit;
 using Topshelf;
-using Topshelf.Configuration.Dsl;
 
 namespace Service
 {
